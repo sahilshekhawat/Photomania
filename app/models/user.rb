@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
     Micropost.from_users_followed_by(self)
   end
 
+  def feeds
+    Micropost.from_yourself(self)
+  end
+
   def following?(other_user)
     relationships.find_by(followed_id: other_user.id)
   end
