@@ -1,6 +1,0 @@
-<% if @my_photos.any? %>
-  <ol class="microposts">
-    <%= render partial: 'shared/feed_item', collection: @my_photos %>
-  </ol>
-  <%= will_paginate @my_photos %>
-<% end %>
